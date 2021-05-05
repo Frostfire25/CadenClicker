@@ -30,6 +30,7 @@ public class GUI extends JFrame {
 		add(clickerPanel);
 	        
 		mainCadenButton = new JButton();
+		mainCadenButton.setSize(200,200);
 		mainCadenButton.setBounds(50,100,80,30);  
 		mainCadenButton.setBackground(Color.YELLOW);
 		mainCadenButton.addActionListener(new CadenClickEvent());
