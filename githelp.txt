@@ -1,12 +1,25 @@
+
 …or create a new repository on the command line
 echo "# CadenClicker" >> README.md
+
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Frostfire25/CadenClicker.git
 git push -u origin main
+
+
 …or push an existing repository from the command line
 git remote add origin https://github.com/Frostfire25/CadenClicker.git
 git branch -M main
 git push -u origin main
+
+...push 
+cd (directory)
+git add .
+git commit -m "Commit message"
+git push -u origin main
+
+...pull
+git pull (reponame)
