@@ -1,5 +1,16 @@
 package listeners;
 
-public class CadenClickEvent {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import graphics.Main;
+import objects.Game;
+
+public class CadenClickEvent implements ActionListener {
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		Game game = Main.	
+	}
+	
 }
