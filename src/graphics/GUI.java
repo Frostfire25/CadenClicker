@@ -8,6 +8,12 @@ public class GUI extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(2000,800);
+		setResizable(false);
+		addButtons();
+	}
+	
+	private void addButtons() {
+		
 	}
 	
 	public void openGUI() {
