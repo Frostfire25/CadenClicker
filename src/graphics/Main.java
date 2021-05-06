@@ -1,6 +1,8 @@
 package graphics;
 
 import objects.Game;
+import objects.Timer;
+import objects.TimerRunnable;
 import upgrades.Upgrade;
 import upgrades.Upgrades;
 import workers.Workers;
@@ -11,6 +13,7 @@ public class Main {
 	public static Game game;
 	public static Upgrades upgrades;
 	public static Workers workers;
+	public static Timer timer;
 	
 	//Main Method
 	public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class Main {
 		game = new Game();
 		upgrades = new Upgrades();
 		workers = new Workers();
+		timer = new Timer();
 		
 		gui.openGUI();
 	}

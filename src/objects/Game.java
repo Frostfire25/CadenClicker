@@ -4,6 +4,8 @@ public class Game {
 
 	private int cadens;	
 	
+	private int worker1Amount = 0;
+	
 	public Game() {
 		this.cadens = 0;
 	}
