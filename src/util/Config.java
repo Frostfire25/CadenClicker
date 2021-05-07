@@ -1,5 +1,13 @@
 package util;
 
-public class Config {
+import java.io.File;
 
+public class Config {
+	
+	private File file;
+	
+	public Config() {
+		
+	}
+	
 }
