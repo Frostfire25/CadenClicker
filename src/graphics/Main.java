@@ -5,6 +5,7 @@ import objects.Timer;
 import objects.TimerRunnable;
 import upgrades.Upgrade;
 import upgrades.Upgrades;
+import util.Config;
 import workers.Workers;
 
 public class Main {
@@ -15,8 +16,13 @@ public class Main {
 	public static Workers workers;
 	public static Timer timer;
 	
+	public static Config config;
+	
 	//Main Method
 	public static void main(String[] args) {
+		
+		config = new Config();
+
 		gui = new GUI();
 		
 		game = new Game();
