@@ -1,9 +1,11 @@
 package objects;
 
+import java.util.HashMap;
+
 public class Game {
 
 	private int cadens;	
-	
+		
 	private int worker1Amount = 0;
 	
 	public Game() {

@@ -16,11 +16,6 @@ public class WorkerClass {
 	private ImageIcon icon;
 	private int amount;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
 	public WorkerClass()
 	{
 		
