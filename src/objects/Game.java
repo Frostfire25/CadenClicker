@@ -1,14 +1,31 @@
 package objects;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Game {
 
+	//ID 
+	private UUID uuid;
+	
+	/*
+	 * Game information
+	 */
+	
 	private int cadens;	
-		
-	private int worker1Amount = 0;
+	
+	/*
+	 * Workers
+	 */
+	
+	
+	
+	/*
+	 * Upgrades
+	 */
 	
 	public Game() {
+		this.uuid = UUID.randomUUID();
 		this.cadens = 0;
 	}
 	
