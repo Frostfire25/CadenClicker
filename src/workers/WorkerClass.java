@@ -15,6 +15,8 @@ public class WorkerClass {
 	private int yscale=25;
 	private ImageIcon icon;
 	private int amount;
+	//implement cost?
+	private int cost;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
