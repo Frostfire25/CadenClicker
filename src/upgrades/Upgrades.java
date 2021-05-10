@@ -27,22 +27,26 @@ public class Upgrades {
 			switch(level)
 			{
 				case 1:
-					cpc = 2;
-					name = "Chris";
-					filename = "Chris.jpg";
-				
+					cpc = 1;
+					name = "Caden";
+					filename = "Caden.jpg";
 				case 2:
-					cpc = 4;
-					name = "Hunter";
-					filename = "Hunter.jpg";
+					cpc = 2;
+					name = "CoolCaden";
+					filename = "CoolCaden.jpg";
+				
 				case 3:
-					cpc = 8;
-					name = "SirEvrim";
-					filename = "SirEvrim.jpg";
+					cpc = 4;
+					name = "TravisCaden";
+					filename = "TravisCaden.jpg";
 				case 4:
+					cpc = 8;
+					name = "HoodCaden";
+					filename = "HoodCaden.jpg";
+				case 5:
 					cpc = 16;
-					name = "LightskinCaden";
-					filename = "LightskinCaden.jpg";
+					name = "HoodMonaLisa";
+					filename = "HoodMonaLisa.jpg";
 				
 			}
 			
