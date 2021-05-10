@@ -14,8 +14,8 @@ public class WorkerClass {
 	private int xscale=25;
 	private int yscale=25;
 	private ImageIcon icon;
-	private int amount;
-	
+	public int amount;
+
 	public WorkerClass()
 	{
 		
@@ -54,16 +54,26 @@ public class WorkerClass {
 		BufferedImage img = null;
 		try
 		{
-			img = ImageIO.read(new File(filename));
+			img = ImageIO.read(new File("resources/workers/"+filename));
 		}
 		catch(IOException e)
 		{	
 			System.out.print("Error loading image '" + filename + "'");
 		}
 		
-		Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
+		//Wating for images
 		
-		icon = new ImageIcon(scaled); 
+		
+		//Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
+		
+		//icon = new ImageIcon(scaled); 
+	}
+	
+	public int getAmount() {
+		return amount;
 	}
 
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 }
