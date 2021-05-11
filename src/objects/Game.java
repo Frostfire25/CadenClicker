@@ -38,7 +38,10 @@ public class Game {
 		this(UUID.randomUUID(), 0, 0, 0, 0, 0, 0);
 	}
 	
-	public Game(UUID uuid, int cadens, int worker1Amount, int worker2Amount, int worker3Amount, int worker4Amount, int worker5Amount) {
+	public Game(UUID uuid, 
+			int cadens, int worker1Amount, int worker2Amount, int worker3Amount, int worker4Amount, int worker5Amount
+			
+			) {
 		this.uuid = uuid;
 		this.cadens = 0;
 		
