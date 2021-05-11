@@ -17,7 +17,7 @@ public class Main {
 		gui = new GUI();
 		
 		game = new Game();
-		upgrades = new Upgrades();
+		upgrades = new Upgrades(1);
 		workers = new Workers();
 		
 		gui.openGUI();
