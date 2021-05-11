@@ -1,5 +1,7 @@
 package graphics;
 
+import java.util.Scanner;
+
 import objects.Game;
 import objects.GameSaveManager;
 import objects.Timer;
@@ -10,11 +12,11 @@ import util.Config;
 import workers.Workers;
 
 public class Main {
+	
+	public static Scanner scanner = new Scanner(System.in);
 
 	public static GUI gui;
 	public static Game game;
-	public static Upgrades upgrades;
-	public static Workers workers;
 	public static Timer timer;
 	public static GameSaveManager gameSaveManager;
 	
@@ -26,12 +28,11 @@ public class Main {
 		config = new Config();
 		gameSaveManager = new GameSaveManager();
 		
+		//System.out.println("Please enter your game save key: ");
+		//game = gameSaveManager.getGame(scanner.nextLine());
+		
 		gui = new GUI();
-		
-		game = new Game();
-		
-		upgrades = new Upgrades();
-		workers = new Workers();
+				
 		timer = new Timer();
 				
 		gui.openGUI();
