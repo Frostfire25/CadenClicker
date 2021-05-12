@@ -28,17 +28,17 @@ public class GUI extends JFrame {
 		setSize(2000,800);
 		setResizable(false);
 		
-		icons(250,250);
+		iconscadens("HoodMonaLisa.jpg",250,250);
 		clickerPanel();
 	}
 	
 	//Set's up the icons
 	
-	private void icons(int xscale, int yscale) 
+	private void iconscadens(String filename, int xscale, int yscale) 
 	{
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("resources/workers/Hunter.jpg"));
+			img = ImageIO.read(new File("resources/Cadens/" + filename ));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

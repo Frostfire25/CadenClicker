@@ -66,6 +66,9 @@ public class Upgrades {
 			
 			icon = new ImageIcon(scaled); 
 		}
-	
+	public String getFileName()
+	{
+		return filename;
+	}
 	
 }
