@@ -2,6 +2,7 @@ package graphics;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -27,18 +28,22 @@ public class GUI extends JFrame {
 		setSize(2000,800);
 		setResizable(false);
 		
-		icons();
+		icons(250,250);
 		clickerPanel();
 	}
 	
 	//Set's up the icons
-	private void icons() {
+	
+	private void icons(int xscale, int yscale) 
+	{
+		BufferedImage img = null;
 		try {
-			cadenIcon = new ImageIcon(ImageIO.read(new File("resources/workers/Hunter.jpg")));
-			
+			img = ImageIO.read(new File("resources/workers/Hunter.jpg"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
+		cadenIcon = new ImageIcon(scaled);
 	}
 	
 	private void clickerPanel() {
