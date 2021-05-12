@@ -34,7 +34,8 @@ public class GUI extends JFrame {
 	//Set's up the icons
 	private void icons() {
 		try {
-			cadenIcon = new ImageIcon(ImageIO.read(getClass().getResource("cookie.png")));
+			cadenIcon = new ImageIcon(ImageIO.read(new File("resources/workers/Hunter.jpg")));
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,13 +49,14 @@ public class GUI extends JFrame {
 		add(clickerPanel);
 	       
 		
-		mainCadenButton = new JButton();
+		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setLocation(50, 200);
 		mainCadenButton.setPreferredSize(new Dimension(250, 250));
 		mainCadenButton.setBounds(50, 200, 250, 250);
 		mainCadenButton.setBackground(Color.YELLOW);
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
+
 		
 		clickerPanel.add(mainCadenButton);
 		

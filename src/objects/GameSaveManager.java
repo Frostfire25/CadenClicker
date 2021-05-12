@@ -14,6 +14,10 @@ public class GameSaveManager {
 		
 	}
 	
+	/*
+	 * Load game
+	 */
+	
 	public Game getGame(String uuid) {
 		HashMap<String, Integer> values = new HashMap<>();
 		
@@ -61,4 +65,11 @@ public class GameSaveManager {
 		return null;
 	}
 	
+	/*
+	 * Save game
+	 */
+	
+	public void saveGame(Game game) {
+		
+	}
 }
