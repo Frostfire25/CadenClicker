@@ -1,6 +1,7 @@
 package graphics;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 import objects.Game;
 import objects.GameSaveManager;
@@ -28,8 +29,8 @@ public class Main {
 		config = new Config();
 		gameSaveManager = new GameSaveManager();
 		
-		//System.out.println("Please enter your game save key: ");
-		//game = gameSaveManager.getGame(scanner.nextLine());
+		System.out.println("Please enter your game save key: ");
+		game = gameSaveManager.getGame(scanner.nextLine());		
 		
 		gui = new GUI();
 				
@@ -40,6 +41,10 @@ public class Main {
 	
 	private void loadSaveGame(String uuid) {
 		
+	}
+	
+	public Game getGame() {
+		return game;
 	}
 	
 }

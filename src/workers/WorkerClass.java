@@ -9,6 +9,7 @@ import javax.swing.*;
 
 public class WorkerClass {
 	private int cps;
+
 	private String name;
 	private String filename;
 	private int xscale=25;
@@ -75,5 +76,9 @@ public class WorkerClass {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	public int getCps() {
+		return cps;
 	}
 }

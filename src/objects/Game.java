@@ -1,6 +1,7 @@
 package objects;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.UUID;
 
 import workers.WorkerClass;
@@ -26,9 +27,13 @@ public class Game {
 	private WorkerClass tannerworker;
 	private WorkerClass lostdollaworker;
 	
+	public HashSet<WorkerClass> workers = new HashSet<>();
+	
 	/*
 	 * Upgrades
 	 */
+	
+	
 	
 	/*
 	 * Constructors
@@ -45,21 +50,30 @@ public class Game {
 		this.uuid = uuid;
 		this.cadens = 0;
 		
+		
+		//Workers
 		this.chrisworker = new WorkerClass(1);
 		this.chrisworker.setAmount(worker1Amount);
+		this.workers.add(chrisworker);
 		
 		this.hunterworker = new WorkerClass(2);
 		this.hunterworker.setAmount(worker2Amount);
+		this.workers.add(hunterworker);
 
 		this.sirevrimworker = new WorkerClass(3);
 		this.sirevrimworker.setAmount(worker3Amount);
+		this.workers.add(sirevrimworker);
 		
 		this.tannerworker = new WorkerClass(4);
 		this.tannerworker.setAmount(worker4Amount);
+		this.workers.add(tannerworker);
 
 		this.lostdollaworker = new WorkerClass(5);
 		this.lostdollaworker.setAmount(worker5Amount);
+		this.workers.add(lostdollaworker);
 
+		//Upgrades
+		
 	}
 
 	
@@ -73,6 +87,10 @@ public class Game {
 	
 	public void removeCadens(int cadens) {
 		this.cadens -= cadens;
+	}
+	
+	public int getCadens() {
+		return cadens;
 	}
 	
 }
