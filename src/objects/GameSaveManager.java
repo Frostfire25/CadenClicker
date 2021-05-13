@@ -25,8 +25,10 @@ public class GameSaveManager {
 		
 		File file = fileExists(uuid);
 		
-		if(file == null) 
+		if(file == null) {
+			System.out.println("ret");
 			return null;
+		}
 		
 		System.out.println("file found " + file.getPath());
 			
@@ -51,15 +53,18 @@ public class GameSaveManager {
 		
 	}
 	
+	//TEST-uuid : 352130d8-58e4-4c60-8a5f-ee22fcc47dd8
 	private File fileExists(String uuid) {
 				
 		try {
-			System.out.println("resources/games/"+uuid);
+			System.out.println("resources/games/"+uuid+".txt");
 			File file = new File("resources/games/"+uuid+".txt");
-			if(file.exists())
+			
+			if(file != null)
 				return file;
+			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		return null;

@@ -1,0 +1,6 @@
+cadens:1
+worker1amount:7
+worker2amount:5
+worker3amount:6
+worker4amount:7
+worker5amount:4
