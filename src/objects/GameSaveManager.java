@@ -74,7 +74,19 @@ public class GameSaveManager {
 	 * Save game
 	 */
 	
+	//TO-Do
 	public void saveGame(Game game) {
+		try {
+		File file = new File("resources/games/"+game.getUUID().toString()+".txt");
 		
+			if(file.exists()) {
+			
+			} else {
+				file.createNewFile();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

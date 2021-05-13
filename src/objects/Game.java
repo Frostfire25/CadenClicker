@@ -93,4 +93,7 @@ public class Game {
 		return cadens;
 	}
 	
+	public UUID getUUID() {
+		return uuid;
+	}
 }

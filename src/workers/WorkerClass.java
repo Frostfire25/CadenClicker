@@ -16,6 +16,7 @@ public class WorkerClass {
 	private int yscale=25;
 	private ImageIcon icon;
 	public int amount;
+	public int price;
 
 	public WorkerClass()
 	{
@@ -33,23 +34,32 @@ public class WorkerClass {
 				cps = 1;
 				name = "Chris";
 				filename = "Chris.jpg";
+				price = 100;
 			
 			case 2:
 				cps = 5;
 				name = "Hunter";
 				filename = "Hunter.jpg";
+				price = 1500;
+				
 			case 3:
 				cps = 8;
 				name = "SirEvrim";
 				filename = "SirEvrim.jpg";
+				price = 30000;
+				
 			case 4:
 				cps = 12;
 				name = "Tanner";
 				filename = "Tanner.jpg";
+				price = 120000;
+				
 			case 5:
 				cps = 25;
 				name = "LostDolla";
 				filename = "LostDolla.jpg";
+				price = 2500000;
+				
 		}
 		
 		BufferedImage img = null;
@@ -80,5 +90,10 @@ public class WorkerClass {
 	
 	public int getCps() {
 		return cps;
+	}
+	
+	//Returns amount of Cadens needed
+	public int getPrice() {
+		return price;
 	}
 }
