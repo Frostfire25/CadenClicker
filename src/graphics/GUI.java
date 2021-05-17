@@ -30,7 +30,8 @@ public class GUI extends JFrame {
 		setSize(2000,800);
 		setResizable(false);
 		
-		iconscadens("cadenfixed.png",250,250);
+		
+		iconscadens("cadenfixed.png", 250,250);
 		clickerPanel();
 	}
 	
@@ -58,9 +59,11 @@ public class GUI extends JFrame {
 		
 		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setLocation(50, 200);
-		mainCadenButton.setPreferredSize(new Dimension(250, 250));
-		mainCadenButton.setBounds(50, 200, 250, 250);
-		mainCadenButton.setBackground(Color.YELLOW);
+		//mainCadenButton.setBounds(50, 200, 250, 250);
+		mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
+		mainCadenButton.setOpaque(false);
+		mainCadenButton.setContentAreaFilled(false);
+		mainCadenButton.setBorderPainted(false);		
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
 
