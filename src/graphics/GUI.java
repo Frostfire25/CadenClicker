@@ -14,11 +14,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
 import listeners.CadenClickEvent;
+import listeners.UpgradeClickEvent;
 
 public class GUI extends JFrame {
 
 	private JPanel clickerPanel;
 	private JButton mainCadenButton;
+	private JButton upgradeButton;
 	
 	private ImageIcon cadenIcon;
 	
@@ -62,9 +64,14 @@ public class GUI extends JFrame {
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
 
+		upgradeButton = new JButton("Upgrade to next level");
+		upgradeButton.setLocation(300,200);
+		upgradeButton.setPreferredSize(new Dimension(250, 250));
+		upgradeButton.setBounds(50, 200, 250, 250);
+		upgradeButton.addActionListener(new UpgradeClickEvent());
 		
 		clickerPanel.add(mainCadenButton);
-		
+		clickerPanel.add(upgradeButton);
 	}
 	
 	public void openGUI() {

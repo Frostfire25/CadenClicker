@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
+import upgrades.Upgrades;
 import workers.WorkerClass;
 
 public class Game {
@@ -17,6 +18,8 @@ public class Game {
 	
 	private int cadens;	
 	
+	public int cpc;
+	
 	/*
 	 * Workers
 	 */
@@ -27,12 +30,14 @@ public class Game {
 	private WorkerClass tannerworker;
 	private WorkerClass lostdollaworker;
 	
+
 	public HashSet<WorkerClass> workers = new HashSet<>();
 	
 	/*
-	 * Upgrades
+	 * Button upgrades
 	 */
 	
+	private Upgrades upgradeLevel;
 	
 	
 	/*
@@ -73,6 +78,8 @@ public class Game {
 		this.workers.add(lostdollaworker);
 
 		//Upgrades
+		this.upgradeLevel = new Upgrades(1);
+		this.cpc = upgradeLevel.GetCPC();
 		
 	}
 
@@ -95,5 +102,16 @@ public class Game {
 	
 	public UUID getUUID() {
 		return uuid;
+	}
+	
+	public void Upgrade()
+	{
+		this.upgradeLevel.SetLevel(this.upgradeLevel.GetLevel()+1);
+		this.cpc = upgradeLevel.GetCPC();
+	}
+	
+	public Upgrades GetUpgrade()
+	{
+		return upgradeLevel;
 	}
 }
