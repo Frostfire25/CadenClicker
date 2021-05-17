@@ -30,7 +30,7 @@ public class GUI extends JFrame {
 		setSize(2000,800);
 		setResizable(false);
 		
-		iconscadens("HoodMonaLisa.jpg",250,250);
+		iconscadens("cadenfixed.png",250,250);
 		clickerPanel();
 	}
 	
