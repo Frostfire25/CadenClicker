@@ -47,31 +47,36 @@ public class Upgrades {
 	{
 		switch(this.level)
 		{
-			case 1:
+			case 1: {
 				cpc = 1;
 				name = "Caden";
 				filename = "Caden.jpg";
 				cost = 1000;
-			case 2:
+			} break;
+			case 2: {
 				cpc = 10;
 				name = "CoolCaden";
 				filename = "CoolCaden.jpg";
 				cost = 10000;
-			case 3:
+			} break;
+			case 3: {
 				cpc = 100;
 				name = "TravisCaden";
 				filename = "TravisCaden.jpg";
 				cost = 100000;
-			case 4:
+			} break;
+			case 4: {
 				cpc = 1000;
 				name = "HoodCaden";
 				filename = "HoodCaden.jpg";
 				cost = 1000000;
-			case 5:
+			} break;
+			case 5: {
 				cpc = 10000;
 				name = "HoodMonaLisa";
 				filename = "HoodMonaLisa.jpg";
 				cost = 10000000;
+			} break;
 		}
 	}
 	

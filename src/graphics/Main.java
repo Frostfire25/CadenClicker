@@ -1,6 +1,7 @@
 package graphics;
 
 import java.util.Scanner;
+
 import java.util.UUID;
 
 import objects.Game;
