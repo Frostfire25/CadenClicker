@@ -51,19 +51,19 @@ public class Upgrades {
 				cpc = 1;
 				name = "Caden";
 				filename = "Caden.jpg";
-				cost = 1000;
+				cost = 0;
 			} break;
 			case 2: {
 				cpc = 10;
 				name = "CoolCaden";
 				filename = "CoolCaden.jpg";
-				cost = 10000;
+				cost = 1000;
 			} break;
 			case 3: {
 				cpc = 100;
 				name = "TravisCaden";
 				filename = "TravisCaden.jpg";
-				cost = 100000;
+				cost = 25000;
 			} break;
 			case 4: {
 				cpc = 1000;

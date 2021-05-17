@@ -11,7 +11,7 @@ public class UpgradeClickEvent implements ActionListener {
 	private Game game = Main.game;
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
-	{
+	{	
 		game.Upgrade();
 	}
 }

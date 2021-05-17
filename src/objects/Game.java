@@ -106,8 +106,17 @@ public class Game {
 	
 	public void Upgrade()
 	{
-		this.upgradeLevel.SetLevel(this.upgradeLevel.GetLevel()+1);
-		this.cpc = upgradeLevel.GetCPC();
+		Upgrades upgrade = new Upgrades(this.upgradeLevel.GetLevel()+1);
+		if((this.cadens - upgrade.GetCost()) >= 0)
+		{
+			this.upgradeLevel.SetLevel(this.upgradeLevel.GetLevel()+1);
+			this.cpc = upgradeLevel.GetCPC();
+			this.cadens -= upgradeLevel.GetCost();
+		}
+		else
+		{
+			System.out.println("Not enough cadens!");
+		}
 	}
 	
 	public Upgrades GetUpgrade()
