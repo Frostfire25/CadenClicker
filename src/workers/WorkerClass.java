@@ -9,20 +9,24 @@ import javax.swing.*;
 
 public class WorkerClass {
 	private int cps;
+
 	private String name;
 	private String filename;
 	private int xscale=25;
 	private int yscale=25;
 	private ImageIcon icon;
+<<<<<<< HEAD
 	private int amount;
 	//implement cost?
 	private int cost;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+=======
+	public int amount;
+	public int price;
+>>>>>>> main
 
-	}
-	
 	public WorkerClass()
 	{
 		
@@ -39,38 +43,66 @@ public class WorkerClass {
 				cps = 1;
 				name = "Chris";
 				filename = "Chris.jpg";
+				price = 100;
 			
 			case 2:
 				cps = 5;
 				name = "Hunter";
 				filename = "Hunter.jpg";
+				price = 1500;
+				
 			case 3:
 				cps = 8;
 				name = "SirEvrim";
 				filename = "SirEvrim.jpg";
+				price = 30000;
+				
 			case 4:
 				cps = 12;
 				name = "Tanner";
 				filename = "Tanner.jpg";
+				price = 120000;
+				
 			case 5:
 				cps = 25;
 				name = "LostDolla";
 				filename = "LostDolla.jpg";
+				price = 2500000;
+				
 		}
 		
 		BufferedImage img = null;
 		try
 		{
-			img = ImageIO.read(new File(filename));
+			img = ImageIO.read(new File("resources/workers/"+filename));
 		}
 		catch(IOException e)
 		{	
 			System.out.print("Error loading image '" + filename + "'");
 		}
 		
-		Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
+		//Wating for images
 		
-		icon = new ImageIcon(scaled); 
+		
+		//Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
+		
+		//icon = new ImageIcon(scaled); 
+	}
+	
+	public int getAmount() {
+		return amount;
 	}
 
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	
+	public int getCps() {
+		return cps;
+	}
+	
+	//Returns amount of Cadens needed
+	public int getPrice() {
+		return price;
+	}
 }
