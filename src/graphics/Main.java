@@ -10,7 +10,7 @@ import objects.TimerRunnable;
 import upgrades.Upgrade;
 import upgrades.Upgrades;
 import util.Config;
-import workers.Workers;
+import workers.WorkerClass;
 
 public class Main {
 	
