@@ -38,6 +38,7 @@ public class GameSaveManager {
 			
 			values.put(line[0], Integer.parseInt(line[1]));
 		}
+		bufferedReader.close();
 		
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,7 +50,8 @@ public class GameSaveManager {
 				values.get("worker2amount"),
 				values.get("worker3amount"),
 				values.get("worker4amount"),
-				values.get("worker5amount"));
+				values.get("worker5amount"),
+				values.get("upgradelevel"));
 		
 	}
 	
@@ -79,11 +81,24 @@ public class GameSaveManager {
 		try {
 		File file = new File("resources/games/"+game.getUUID().toString()+".txt");
 		
-			if(file.exists()) {
-			
-			} else {
+			if(!file.exists()) {
 				file.createNewFile();
 			}
+			
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+			
+			if(file.canWrite()) {
+				bufferedWriter.write("cadens:"+game.getCadens());
+				bufferedWriter.write("worker1amount:"+game.chrisworker.amount);
+				bufferedWriter.write("worker2amount:"+game.hunterworker.amount);
+				bufferedWriter.write("worker3amount:"+game.sirevrimworker.amount);
+				bufferedWriter.write("worker4amount:"+game.tannerworker.amount);
+				bufferedWriter.write("worker5amount:"+game.lostdollaworker.amount);
+				bufferedWriter.write("upgradelevel:"+game.getUpgradeLevel());
+			}
+			
+			bufferedWriter.close();
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
