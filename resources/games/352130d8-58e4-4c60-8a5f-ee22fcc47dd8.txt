@@ -1,7 +1,11 @@
-cadens:2
+cadens:100000000
 worker1amount:1
 worker2amount:0
 worker3amount:0
 worker4amount:0
+<<<<<<< HEAD
 worker5amount:0
 upgradelevel:3
+=======
+worker5amount:10
+>>>>>>> 3f52dddcb1966b3a5e73b7589d37ca40b43b065a

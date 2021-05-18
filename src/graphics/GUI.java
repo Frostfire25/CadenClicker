@@ -37,7 +37,7 @@ public class GUI extends JFrame {
 	
 	//Set's up the icons
 	
-	private void iconscadens(String filename, int xscale, int yscale) 
+	public void iconscadens(String filename, int xscale, int yscale) 
 	{
 		BufferedImage img = null;
 		try {
@@ -85,4 +85,8 @@ public class GUI extends JFrame {
 		setVisible(false);
 	}
 	
+	public void changeButton()
+	{
+		mainCadenButton.setIcon(cadenIcon);
+	}
 }
