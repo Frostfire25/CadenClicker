@@ -30,35 +30,40 @@ public class WorkerClass {
 	{
 		switch(level)
 		{
-			case 1:
+			case 1: {
 				cps = 1;
 				name = "Chris";
 				filename = "Chris.jpg";
 				price = 100;
+			} break;
 			
-			case 2:
+			case 2: {
 				cps = 5;
 				name = "Hunter";
 				filename = "Hunter.jpg";
 				price = 1500;
+			} break;
 				
-			case 3:
+			case 3: {
 				cps = 8;
 				name = "SirEvrim";
 				filename = "SirEvrim.jpg";
 				price = 30000;
+			} break;
 				
 			case 4:
-				cps = 12;
+				cps = 12; {
 				name = "Tanner";
 				filename = "Tanner.jpg";
 				price = 120000;
+			} break;
 				
-			case 5:
+			case 5: {
 				cps = 25;
 				name = "LostDolla";
 				filename = "LostDolla.jpg";
 				price = 2500000;
+			} break;
 				
 		}
 		
