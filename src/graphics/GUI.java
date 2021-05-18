@@ -3,14 +3,17 @@ package graphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 import listeners.CadenClickEvent;
@@ -34,6 +37,17 @@ public class GUI extends JFrame {
 		iconscadens("cadenfixed.png", 250,250);
 		clickerPanel();
 	}
+	
+	public void centeringWindow() {
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int x;
+        int y;
+
+        x = (int) (dimension.getWidth() - getWidth()) / 2;
+        y = (int) (dimension.getHeight() - getHeight()) / 2;
+
+        setLocation(x, y);
+    }
 	
 	//Set's up the icons
 	
@@ -63,7 +77,8 @@ public class GUI extends JFrame {
 		mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
 		mainCadenButton.setOpaque(false);
 		mainCadenButton.setContentAreaFilled(false);
-		mainCadenButton.setBorderPainted(false);		
+		mainCadenButton.setBorderPainted(false);
+		mainCadenButton.setBorder(BorderFactory.createEmptyBorder());
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
 
@@ -78,6 +93,7 @@ public class GUI extends JFrame {
 	}
 	
 	public void openGUI() {
+		centeringWindow();
 		setVisible(true);
 	}
 	

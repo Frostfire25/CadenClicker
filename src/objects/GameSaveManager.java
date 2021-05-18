@@ -35,7 +35,7 @@ public class GameSaveManager {
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 		while(bufferedReader.ready()) {
 			String[] line = bufferedReader.readLine().split(":");
-			
+						
 			values.put(line[0], Integer.parseInt(line[1]));
 		}
 		bufferedReader.close();
