@@ -24,11 +24,11 @@ public class Game {
 	 * Workers
 	 */
 	
-	private WorkerClass chrisworker;
-	private WorkerClass hunterworker;
-	private WorkerClass sirevrimworker;
-	private WorkerClass tannerworker;
-	private WorkerClass lostdollaworker;
+	public WorkerClass chrisworker;
+	public WorkerClass hunterworker;
+	public WorkerClass sirevrimworker;
+	public WorkerClass tannerworker;
+	public WorkerClass lostdollaworker;
 	
 
 	public HashSet<WorkerClass> workers = new HashSet<>();
@@ -37,7 +37,7 @@ public class Game {
 	 * Button upgrades
 	 */
 	
-	private Upgrades upgradeLevel;
+	private Upgrades upgrade;
 	
 	
 	/*
@@ -45,15 +45,20 @@ public class Game {
 	 */
 	
 	public Game() {
-		this(UUID.randomUUID(), 0, 0, 0, 0, 0, 0);
+		this(UUID.randomUUID(), 0, 0, 0, 0, 0, 0, 1);
 	}
 	
 	public Game(UUID uuid, 
-			int cadens, int worker1Amount, int worker2Amount, int worker3Amount, int worker4Amount, int worker5Amount
+			int cadens, int worker1Amount, int worker2Amount, int worker3Amount, int worker4Amount, int worker5Amount,
+			int upgradeLevel
+	
+			
 			
 			) {
+		
+		//Data storage
 		this.uuid = uuid;
-		this.cadens = 0;
+		this.cadens = cadens;
 		
 		
 		//Workers
@@ -78,8 +83,8 @@ public class Game {
 		this.workers.add(lostdollaworker);
 
 		//Upgrades
-		this.upgradeLevel = new Upgrades(1);
-		this.cpc = upgradeLevel.GetCPC();
+		this.upgrade = new Upgrades(upgradeLevel);
+		this.cpc = upgrade.GetCPC();
 		
 	}
 
@@ -106,12 +111,12 @@ public class Game {
 	
 	public void Upgrade()
 	{
-		Upgrades upgrade = new Upgrades(this.upgradeLevel.GetLevel()+1);
+		Upgrades upgrade = new Upgrades(this.upgrade.GetLevel()+1);
 		if((this.cadens - upgrade.GetCost()) >= 0)
 		{
-			this.upgradeLevel.SetLevel(this.upgradeLevel.GetLevel()+1);
-			this.cpc = upgradeLevel.GetCPC();
-			this.cadens -= upgradeLevel.GetCost();
+			this.upgrade.SetLevel(this.upgrade.GetLevel()+1);
+			this.cpc = upgrade.GetCPC();
+			this.cadens -= upgrade.GetCost();
 		}
 		else
 		{
@@ -121,6 +126,10 @@ public class Game {
 	
 	public Upgrades GetUpgrade()
 	{
-		return upgradeLevel;
+		return upgrade;
+	}
+	
+	public int getUpgradeLevel() {
+		return upgrade.GetLevel();
 	}
 }
