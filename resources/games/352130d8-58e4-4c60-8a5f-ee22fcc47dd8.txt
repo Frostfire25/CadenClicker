@@ -1,6 +1,6 @@
-cadens:2
+cadens:100000000
 worker1amount:1
 worker2amount:0
 worker3amount:0
 worker4amount:0
-worker5amount:0
+worker5amount:10

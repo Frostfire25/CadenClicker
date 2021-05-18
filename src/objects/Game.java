@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
+import graphics.Main;
 import upgrades.Upgrades;
 import workers.WorkerClass;
 
@@ -112,6 +113,8 @@ public class Game {
 			this.upgradeLevel.SetLevel(this.upgradeLevel.GetLevel()+1);
 			this.cpc = upgradeLevel.GetCPC();
 			this.cadens -= upgradeLevel.GetCost();
+			Main.gui.iconscadens(upgradeLevel.getFileName(),250,250);
+			Main.gui.changeButton();
 		}
 		else
 		{
