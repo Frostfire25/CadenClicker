@@ -119,8 +119,8 @@ public class Game {
 			this.upgrade.SetLevel(this.upgrade.GetLevel()+1);
 			this.cpc = upgrade.GetCPC();
 			this.cadens -= upgrade.GetCost();
-			Main.gui.iconscadens(upgrade.getFileName(),250,250);
-			Main.gui.changeButton();
+			//Main.gui.iconscadens(upgrade.getFileName(),250,250);
+			//Main.gui.changeButton();
 
 		}
 		else

@@ -30,21 +30,13 @@ public class Main {
 		config = new Config();
 		gameSaveManager = new GameSaveManager();
 		
-		loadSaveGame();
+		//loadSaveGame();
 		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					gui = new CadenClickerGUI();
-			} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		gui = new CadenClickerGUI();
 				
 		timer = new Timer();
 		
-		gui.show();
+		gui.displayGUI();
 	
 	}
 	
