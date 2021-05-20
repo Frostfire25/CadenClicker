@@ -30,7 +30,7 @@ public class Main {
 		config = new Config();
 		gameSaveManager = new GameSaveManager();
 		
-		//loadSaveGame();
+		loadSaveGame();
 		
 		gui = new CadenClickerGUI();
 				
