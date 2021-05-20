@@ -99,7 +99,6 @@ public class GameSaveManager {
 			
 			bufferedWriter.close();
 			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

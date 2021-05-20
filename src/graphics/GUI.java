@@ -1,6 +1,8 @@
 package graphics;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -32,7 +34,7 @@ public class GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(2000,800);
 		setResizable(false);
-		
+		setBackground(Color.PINK);
 		
 		iconscadens("cadenfixed.png", 250,250);
 		clickerPanel();
@@ -64,12 +66,9 @@ public class GUI extends JFrame {
 	}
 	
 	private void clickerPanel() {
-		clickerPanel = new JPanel();
-		clickerPanel.setBounds(40,80,200,200);    
-		clickerPanel.setBackground(Color.CYAN);  
-		
-		add(clickerPanel);
-	       
+		clickerPanel = new JPanel(new BorderLayout());
+		clickerPanel.setBounds(0,0,1000,1000);    
+		clickerPanel.setBackground(Color.CYAN);  	       
 		
 		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setLocation(50, 200);
@@ -90,6 +89,8 @@ public class GUI extends JFrame {
 		
 		clickerPanel.add(mainCadenButton);
 		clickerPanel.add(upgradeButton);
+		
+		add(clickerPanel);
 	}
 	
 	public void openGUI() {

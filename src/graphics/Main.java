@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.EventQueue;
 import java.util.Scanner;
 
 import java.util.UUID;
@@ -16,7 +17,7 @@ public class Main {
 	
 	public static Scanner scanner = new Scanner(System.in);
 
-	public static GUI gui;
+	public static CadenClickerGUI gui;
 	public static Game game;
 	public static Timer timer;
 	public static GameSaveManager gameSaveManager;
@@ -29,18 +30,27 @@ public class Main {
 		config = new Config();
 		gameSaveManager = new GameSaveManager();
 		
-		System.out.println("Please enter your game save key: ");
-		game = gameSaveManager.getGame(scanner.nextLine());		
+		loadSaveGame();
 		
-		gui = new GUI();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					gui = new CadenClickerGUI();
+			} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 				
 		timer = new Timer();
-				
-		gui.openGUI();
+		
+		gui.show();
+	
 	}
 	
-	private void loadSaveGame(String uuid) {
-		
+	private static void loadSaveGame() {
+		System.out.println("Please enter your game save key: ");
+		game = gameSaveManager.getGame(scanner.nextLine());		
 	}
 	
 	public Game getGame() {
