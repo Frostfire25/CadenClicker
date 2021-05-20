@@ -14,6 +14,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
@@ -26,6 +27,7 @@ public class GUI extends JFrame {
 	private JPanel clickerPanel;
 	private JButton mainCadenButton;
 	private JButton upgradeButton;
+	private JLabel cadensLabel;
 	
 	private ImageIcon cadenIcon;
 	
@@ -87,23 +89,35 @@ public class GUI extends JFrame {
 		upgradeButton.setBounds(50, 200, 250, 250);
 		upgradeButton.addActionListener(new UpgradeClickEvent());
 		
+		cadensLabel = new JLabel(String.valueOf(Main.game.getCadens()));
+		cadensLabel.setLocation(50, 400);
+		
 		clickerPanel.add(mainCadenButton);
 		clickerPanel.add(upgradeButton);
-		
+
+		clickerPanel.add(cadensLabel);		
 		add(clickerPanel);
+
 	}
 	
-	public void openGUI() {
+	public void openGUI() 
+	{
 		centeringWindow();
 		setVisible(true);
 	}
 	
-	public void closeGUI() {
+	public void closeGUI() 
+	{
 		setVisible(false);
 	}
 	
 	public void changeButton()
 	{
 		mainCadenButton.setIcon(cadenIcon);
+	}
+	
+	public void updateCount()
+	{
+		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
 }
