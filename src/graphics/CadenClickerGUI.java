@@ -58,6 +58,7 @@ public class CadenClickerGUI extends JFrame {
 	
 	public void centeringWindow() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+              
         int x;
         int y;
 
