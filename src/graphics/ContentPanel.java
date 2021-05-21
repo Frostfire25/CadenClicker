@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
 
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
-import workers.WorkerClass;
 
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
@@ -32,64 +31,20 @@ import java.io.File;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
 
-
-public class CadenClickerGUI extends JFrame {
-
-	private JPanel contentPane;
-
+public class ContentPanel extends JPanel {
+	
+	private JPanel clickerPanel;
 	private JButton mainCadenButton;
 	private JButton upgradeButton;
 	private JLabel cadensLabel;
 	
 	private ImageIcon cadenIcon;
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
-	 */
 	
-	public void displayGUI() {
-		setVisible(true);
-	}
 	
-	public void hideGUI() {
-		setVisible(false);
-	}
-	
-	public void centeringWindow() {
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-              
-        int x;
-        int y;
-
-        x = (int) (dimension.getWidth() - getWidth()) / 2;
-        y = (int) (dimension.getHeight() - getHeight()) / 2;
-
-        setLocation(x, y);
-    }
-
-	
-	public CadenClickerGUI() {
-		//GUI defualts setup
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1800, 800);
-		setResizable(false);
-		
-		centeringWindow();
-	    //loading icons
-		
-		/*
-		iconscadens("cadenfixed.png", 250,250);
-		
-		//CotentPane setup
-		
-		contentPane = new JPanel();
-
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	public ContentPanel() {
+		setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
-		contentPane.setLayout(null);
+		setLayout(null);
 		
 		JButton btnNewButton = new JButton("CoolCaden");
 		btnNewButton.setForeground(Color.BLACK);
@@ -97,50 +52,45 @@ public class CadenClickerGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		contentPane.setLayout(null);
+		setLayout(null);
 		btnNewButton.setBounds(270, 11, 121, 52);
-		contentPane.add(btnNewButton);
+		add(btnNewButton);
 		
 		JButton button = new JButton("TravisCaden");
 		button.setBounds(270, 74, 121, 52);
-		contentPane.add(button);
+		add(button);
 		
 		JButton button_1 = new JButton("HoodCaden");
 		button_1.setBounds(270, 137, 121, 52);
-		contentPane.add(button_1);
+		add(button_1);
 		
 		JButton button_2 = new JButton("HoodMonaLisa");
 		button_2.setBounds(270, 216, 121, 52);
-		contentPane.add(button_2);
+		add(button_2);
 		
 		JButton button_4 = new JButton("Chris");
-		button_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent Click) {
-				WorkerClass workers = new WorkerClass();
-				workers.
-			}
-		});
 		button_4.setBounds(1330, 62, 150, 79);
-		contentPane.add(button_4);
+		add(button_4);
 		
 		JButton button_5 = new JButton("Hunter");
 		button_5.setBounds(1330, 203, 150, 79);
-		contentPane.add(button_5);
+		add(button_5);
 		
 		JButton button_6 = new JButton("SirEvrim");
 		button_6.setBounds(1330, 344, 150, 79);
-		contentPane.add(button_6);
+		add(button_6);
 		
 		JButton button_7 = new JButton("Tanner");
 		button_7.setBounds(1330, 485, 150, 79);
-		contentPane.add(button_7);
+		add(button_7);
 		
 		JButton button_8 = new JButton("LostDolla");
 		button_8.setBounds(1330, 626, 150, 79);
-		contentPane.add(button_8);
+		add(button_8);
 
-		contentPane.setLayout(null);
+		setLayout(null);
 		
+		cadenIcon = CadenClickerGUI.iconscadens("cadenfixed.png", 250,250);
 		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setBackground(Color.DARK_GRAY);
 		mainCadenButton.setSize(250, 250);
@@ -162,48 +112,23 @@ public class CadenClickerGUI extends JFrame {
 		cadensLabel.setSize(1604, 761);
 		cadensLabel.setLocation(10, 11);
 		
-		contentPane.add(mainCadenButton);
-		contentPane.add(upgradeButton);
+		add(mainCadenButton);
+		add(upgradeButton);
 
-		contentPane.add(cadensLabel);	
-		*/
+		add(cadensLabel);	
+	}
+	
+	@Override
+    public Dimension getPreferredSize() {
+	      return new Dimension(1800, 800);
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		
-		setContentPane(new ContentPanel());
+		//Draws background
+		g.drawImage(CadenClickerGUI.utilImage("forest3.jpg", 1800, 800).getImage(), 0, 0, null);
 	}
-	
-	public void changeButton()
-	{
-		mainCadenButton.setIcon(cadenIcon);
-	}
-	
-	public void updateCount()
-	{
-		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
-	}
-	
-	public static ImageIcon iconscadens(String filename, int xscale, int yscale) 
-	{
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("resources/Cadens/" + filename ));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
-		return new ImageIcon(scaled);
 
-	}
-	
-	public static ImageIcon utilImage(String filename, int xscale, int yscale) 
-	{
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("resources/util/" + filename ));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
-		return new ImageIcon(scaled);
-	}
 }
