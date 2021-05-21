@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
+import workers.WorkerClass;
 
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
@@ -111,6 +112,12 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.add(button_2);
 		
 		JButton button_4 = new JButton("Chris");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent Click) {
+				WorkerClass workers = new WorkerClass();
+				workers.
+			}
+		});
 		button_4.setBounds(1330, 62, 150, 79);
 		contentPane.add(button_4);
 		
