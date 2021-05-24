@@ -3,6 +3,7 @@ package graphics;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
@@ -16,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
+import workers.WorkerClass;
 
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
@@ -60,6 +62,7 @@ public class CadenClickerGUI extends JFrame {
 	
 	public void centeringWindow() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+              
         int x;
         int y;
 
@@ -68,17 +71,18 @@ public class CadenClickerGUI extends JFrame {
 
         setLocation(x, y);
     }
+
 	
 	public CadenClickerGUI() {
 		//GUI defualts setup
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 2000, 800);
+		setBounds(100, 100, 1800, 800);
 		setResizable(false);
 		
 		centeringWindow();
+	    //loading icons
 		
-		//loading icons
-		
+		/*
 		iconscadens("cadenfixed.png", 250,250);
 		
 		//CotentPane setup
@@ -91,6 +95,12 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton button_4 = new JButton("Chris");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent Click) {
+				WorkerClass workers = new WorkerClass();
+				workers.
+			}
+		});
 		button_4.setBounds(1330, 62, 150, 79);
 		contentPane.add(button_4);
 		
@@ -139,6 +149,7 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.add(mainCadenButton);
 		contentPane.add(upgradeButton);
 
+<<<<<<< HEAD
 		contentPane.add(cadensLabel);		
 		getContentPane().add(contentPane);
 		
@@ -147,6 +158,12 @@ public class CadenClickerGUI extends JFrame {
 		upgradeCostLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		upgradeCostLabel.setBounds(270, 236, 120, 25);
 		contentPane.add(upgradeCostLabel);
+=======
+		contentPane.add(cadensLabel);	
+		*/
+		
+		setContentPane(new ContentPanel());
+>>>>>>> 48c128525c57ef93c8641516c603446398d4451f
 	}
 	
 	public void changeButton()
@@ -159,7 +176,7 @@ public class CadenClickerGUI extends JFrame {
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
 	
-	public void iconscadens(String filename, int xscale, int yscale) 
+	public static ImageIcon iconscadens(String filename, int xscale, int yscale) 
 	{
 		BufferedImage img = null;
 		try {
@@ -168,7 +185,20 @@ public class CadenClickerGUI extends JFrame {
 			e.printStackTrace();
 		}
 		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
-		cadenIcon = new ImageIcon(scaled);
+		return new ImageIcon(scaled);
 
+	}
+	
+	public static ImageIcon utilImage(String filename, int xscale, int yscale) 
+	{
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(new File("resources/util/" + filename ));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
+		return new ImageIcon(scaled);
 	}
 }
