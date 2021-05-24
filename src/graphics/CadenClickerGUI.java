@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
+import upgrades.Upgrades;
 import workers.WorkerClass;
 
 import javax.swing.JLabel;
@@ -80,9 +81,8 @@ public class CadenClickerGUI extends JFrame {
 		setResizable(false);
 		
 		centeringWindow();
-	    //loading icons
 		
-		/*
+	    //loading icons
 		iconscadens("cadenfixed.png", 250,250);
 		
 		//CotentPane setup
@@ -98,7 +98,7 @@ public class CadenClickerGUI extends JFrame {
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Click) {
 				WorkerClass workers = new WorkerClass();
-				workers.
+				//workers.
 			}
 		});
 		button_4.setBounds(1330, 62, 150, 79);
@@ -127,7 +127,7 @@ public class CadenClickerGUI extends JFrame {
 		mainCadenButton.setSize(250, 250);
 		mainCadenButton.setLocation(10, 11);
 		//mainCadenButton.setBounds(50, 200, 250, 250);
-		mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
+		//mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
 		mainCadenButton.setContentAreaFilled(false);
 		mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		mainCadenButton.addActionListener(new CadenClickEvent());
@@ -149,22 +149,19 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.add(mainCadenButton);
 		contentPane.add(upgradeButton);
 
-<<<<<<< HEAD
 		contentPane.add(cadensLabel);		
 		getContentPane().add(contentPane);
 		
-		JLabel upgradeCostLabel = new JLabel("Cost: " + );
+		JLabel upgradeCostLabel = new JLabel("Cost: " + (new Upgrades(Main.game.getUpgradeLevel()+1)).GetCost());
 		upgradeCostLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
 		upgradeCostLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		upgradeCostLabel.setBounds(270, 236, 120, 25);
 		contentPane.add(upgradeCostLabel);
-=======
 		contentPane.add(cadensLabel);	
-		*/
-		
 		setContentPane(new ContentPanel());
->>>>>>> 48c128525c57ef93c8641516c603446398d4451f
 	}
+	
+	//352130d8-58e4-4c60-8a5f-ee22fcc47dd8
 	
 	public void changeButton()
 	{

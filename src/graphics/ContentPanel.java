@@ -130,5 +130,14 @@ public class ContentPanel extends JPanel {
 		//Draws background
 		g.drawImage(CadenClickerGUI.utilImage("forest3.jpg", 1800, 800).getImage(), 0, 0, null);
 	}
-
+	
+	public void changeButton()
+	{
+		mainCadenButton.setIcon(cadenIcon);
+	}
+	
+	public void updateCount()
+	{
+		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+	}
 }

@@ -110,14 +110,4 @@ public class GUI extends JFrame {
 	{
 		setVisible(false);
 	}
-	
-	public void changeButton()
-	{
-		mainCadenButton.setIcon(cadenIcon);
-	}
-	
-	public void updateCount()
-	{
-		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
-	}
 }
