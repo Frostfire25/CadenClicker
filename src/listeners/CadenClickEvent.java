@@ -13,6 +13,6 @@ public class CadenClickEvent implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) 
 	{
 		game.addCadens(Main.game.cpc);
-		Main.gui.updateCount();
+		Main.gui.contentPane.updateCount();
 	}
 }

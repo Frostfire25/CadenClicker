@@ -26,7 +26,7 @@ public class TimerRunnable extends TimerTask {
 		});
 		
 		System.out.println(game.getCadens());
-		Main.gui.updateCount();
+		Main.gui.contentPane.updateCount();
 	}
 
 }

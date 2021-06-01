@@ -35,7 +35,7 @@ import javax.swing.border.BevelBorder;
 
 public class CadenClickerGUI extends JFrame {
 
-	private JPanel contentPane;
+	public ContentPanel contentPane;
 
 	private JButton mainCadenButton;
 	private JButton upgradeButton;
@@ -168,17 +168,10 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.add(cadensLabel);	
 		*/
 		
-		setContentPane(new ContentPanel());
-	}
-	
-	public void changeButton()
-	{
-		mainCadenButton.setIcon(cadenIcon);
-	}
-	
-	public void updateCount()
-	{
-		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+		//Initiates a new content panel
+		contentPane = new ContentPanel();
+		
+		setContentPane(contentPane);
 	}
 	
 	public static ImageIcon iconscadens(String filename, int xscale, int yscale) 
