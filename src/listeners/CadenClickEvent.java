@@ -13,11 +13,7 @@ public class CadenClickEvent implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) 
 	{
 		game.addCadens(Main.game.cpc);
-<<<<<<< HEAD
-		Main.gui.updateCount();
 		System.out.println(game.getCadens());
-=======
 		Main.gui.contentPane.updateCount();
->>>>>>> ece7764628b8a419ef545abc8ae51ba0f13d4c05
 	}
 }

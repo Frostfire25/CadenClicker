@@ -123,19 +123,4 @@ public class ContentPanel extends JPanel {
 	{
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
-<<<<<<< HEAD
-=======
-	
-	public void changeButton()
-	{
-		mainCadenButton.setIcon(cadenIcon);
-	}
-	
-	public void updateCount()
-	{
-		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
-	}
-	
-
->>>>>>> ece7764628b8a419ef545abc8ae51ba0f13d4c05
 }
