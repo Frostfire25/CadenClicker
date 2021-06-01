@@ -38,7 +38,7 @@ import javax.swing.SwingConstants;
 
 public class CadenClickerGUI extends JFrame {
 
-	private JPanel contentPane;
+	public ContentPanel contentPane;
 
 	private JButton mainCadenButton;
 	private JButton upgradeButton;
@@ -152,6 +152,7 @@ public class CadenClickerGUI extends JFrame {
 		contentPane.add(cadensLabel);		
 		getContentPane().add(contentPane);
 		
+<<<<<<< HEAD
 		JLabel upgradeCostLabel = new JLabel("Cost: " + (new Upgrades(Main.game.getUpgradeLevel()+1)).GetCost());
 		upgradeCostLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
 		upgradeCostLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -171,6 +172,12 @@ public class CadenClickerGUI extends JFrame {
 	public void updateCount()
 	{
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+=======
+		//Initiates a new content panel
+		contentPane = new ContentPanel();
+		
+		setContentPane(contentPane);
+>>>>>>> ece7764628b8a419ef545abc8ae51ba0f13d4c05
 	}
 	
 	public static ImageIcon iconscadens(String filename, int xscale, int yscale) 
