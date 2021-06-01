@@ -34,7 +34,7 @@ public class GUI extends JFrame {
 	public GUI() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(2000,800);
+		setSize(1200,800);
 		setResizable(false);
 		setBackground(Color.PINK);
 		

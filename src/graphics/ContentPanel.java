@@ -30,6 +30,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class ContentPanel extends JPanel {
 	
@@ -45,47 +47,26 @@ public class ContentPanel extends JPanel {
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
 		setLayout(null);
-		
-		JButton btnNewButton = new JButton("CoolCaden");
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		setLayout(null);
-		btnNewButton.setBounds(270, 11, 121, 52);
-		add(btnNewButton);
-		
-		JButton button = new JButton("TravisCaden");
-		button.setBounds(270, 74, 121, 52);
-		add(button);
-		
-		JButton button_1 = new JButton("HoodCaden");
-		button_1.setBounds(270, 137, 121, 52);
-		add(button_1);
-		
-		JButton button_2 = new JButton("HoodMonaLisa");
-		button_2.setBounds(270, 216, 121, 52);
-		add(button_2);
 		
 		JButton button_4 = new JButton("Chris");
-		button_4.setBounds(1330, 62, 150, 79);
+		button_4.setBounds(1005, 28, 150, 79);
 		add(button_4);
 		
 		JButton button_5 = new JButton("Hunter");
-		button_5.setBounds(1330, 203, 150, 79);
+		button_5.setBounds(1005, 179, 150, 79);
 		add(button_5);
 		
 		JButton button_6 = new JButton("SirEvrim");
-		button_6.setBounds(1330, 344, 150, 79);
+		button_6.setBounds(1005, 330, 150, 79);
 		add(button_6);
 		
 		JButton button_7 = new JButton("Tanner");
-		button_7.setBounds(1330, 485, 150, 79);
+		button_7.setBounds(1005, 481, 150, 79);
 		add(button_7);
 		
 		JButton button_8 = new JButton("LostDolla");
-		button_8.setBounds(1330, 626, 150, 79);
+		button_8.setBounds(1005, 632, 150, 79);
 		add(button_8);
 
 		setLayout(null);
@@ -105,12 +86,14 @@ public class ContentPanel extends JPanel {
 		upgradeButton = new JButton("Upgrade to next level");
 		upgradeButton.setLocation(300,200);
 		upgradeButton.setPreferredSize(new Dimension(250, 250));
-		upgradeButton.setBounds(546, 366, 250, 250);
+		upgradeButton.setBounds(10, 326, 250, 97);
 		upgradeButton.addActionListener(new UpgradeClickEvent());
 		
 		cadensLabel = new JLabel(String.valueOf(Main.game.getCadens()));
-		cadensLabel.setSize(1604, 761);
-		cadensLabel.setLocation(10, 11);
+		cadensLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 14));
+		cadensLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		cadensLabel.setSize(250, 43);
+		cadensLabel.setLocation(10, 272);
 		
 		add(mainCadenButton);
 		add(upgradeButton);
@@ -120,7 +103,7 @@ public class ContentPanel extends JPanel {
 	
 	@Override
     public Dimension getPreferredSize() {
-	      return new Dimension(1800, 800);
+	      return new Dimension(1200, 800);
 	}
 	
 	@Override
@@ -128,7 +111,7 @@ public class ContentPanel extends JPanel {
 		super.paintComponent(g);
 		
 		//Draws background
-		g.drawImage(CadenClickerGUI.utilImage("forest3.jpg", 1800, 800).getImage(), 0, 0, null);
+		g.drawImage(CadenClickerGUI.utilImage("forest3.jpg", 1200, 800).getImage(), 0, 0, null);
 	}
 	
 	public void changeButton()

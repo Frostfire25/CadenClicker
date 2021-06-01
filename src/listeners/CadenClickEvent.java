@@ -14,5 +14,6 @@ public class CadenClickEvent implements ActionListener {
 	{
 		game.addCadens(Main.game.cpc);
 		Main.gui.updateCount();
+		System.out.println(game.getCadens());
 	}
 }

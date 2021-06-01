@@ -77,7 +77,7 @@ public class CadenClickerGUI extends JFrame {
 	public CadenClickerGUI() {
 		//GUI defualts setup
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1800, 800);
+		setBounds(100, 100, 1200, 800);
 		setResizable(false);
 		
 		centeringWindow();
