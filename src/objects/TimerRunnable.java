@@ -12,7 +12,8 @@ public class TimerRunnable extends TimerTask {
 	public void run() {
 		game = Main.game;
 		
-		System.out.println(game == null);
+		//Updates count
+		//System.out.println(game == null);
 		
 		//Makes sure the player has a game loaded
 		if(game == null)
@@ -25,8 +26,8 @@ public class TimerRunnable extends TimerTask {
 				game.addCadens(n.amount * n.getCps());
 		});
 		
-		System.out.println(game.getCadens());
-		Main.gui.contentPane.updateCount();
+		//System.out.println(game.getCadens());
+		//Main.gui.contentPane.updateCount();
 	}
 
 }

@@ -40,11 +40,11 @@ public class CadenClickerGUI extends JFrame {
 
 	public ContentPanel contentPane;
 
-	private JButton mainCadenButton;
-	private JButton upgradeButton;
-	private JLabel cadensLabel;
+	//private JButton mainCadenButton;
+	//private JButton upgradeButton;
+	//private JLabel cadensLabel;
 	
-	private ImageIcon cadenIcon;
+	//private ImageIcon cadenIcon;
 	/**
 	 * Launch the application.
 	 */
@@ -76,6 +76,7 @@ public class CadenClickerGUI extends JFrame {
 	
 	public CadenClickerGUI() {
 		//GUI defualts setup
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1200, 800);
 		setResizable(false);

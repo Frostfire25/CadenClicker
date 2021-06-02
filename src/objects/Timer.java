@@ -3,6 +3,8 @@ package objects;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+import graphics.Main;
+
 public class Timer {
 
 	/*
@@ -16,6 +18,15 @@ public class Timer {
 	public Timer() {
 		this.timer = new java.util.Timer();
 		timer.schedule(new TimerRunnable(), 2000L, 1000L);
+		
+		new java.util.Timer().schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				Main.gui.contentPane.updateCount();			
+			}
+		
+		}, 2000L, 100L);
 	}
 	
 }
