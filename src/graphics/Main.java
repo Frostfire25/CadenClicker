@@ -48,5 +48,4 @@ public class Main {
 	public Game getGame() {
 		return game;
 	}
-	
 }
