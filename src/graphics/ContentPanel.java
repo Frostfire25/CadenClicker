@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -19,6 +20,8 @@ import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
 
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -37,8 +40,10 @@ public class ContentPanel extends JPanel {
 	private JButton mainCadenButton;
 	private JButton upgradeButton;
 	private JLabel cadensLabel;
+	private JLabel pictureFrame;
 	
 	private ImageIcon cadenIcon;
+	private ImageIcon pictureFrameIcon;
 	
 	
 	public ContentPanel() {
@@ -89,19 +94,32 @@ public class ContentPanel extends JPanel {
 		add(button_8);
 
 		setLayout(null);
+	
+		/*
+		 * Buttons
+		 */
+		
+		pictureFrameIcon = CadenClickerGUI.utilImage("pictureframefixed.png", 300, 300);
+		pictureFrame = new JLabel(pictureFrameIcon);
+		pictureFrame.setBackground(Color.DARK_GRAY);
+		pictureFrame.setSize(300, 300);
+		pictureFrame.setLocation(10, 20);
+		pictureFrame.setIcon(pictureFrameIcon);
 		
 		cadenIcon = CadenClickerGUI.iconscadens("cadenfixed.png", 250,250);
 		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setBackground(Color.DARK_GRAY);
 		mainCadenButton.setSize(250, 250);
-		mainCadenButton.setLocation(10, 11);
+		mainCadenButton.setLocation(10, 50);
+		mainCadenButton.setBorder(BorderFactory.createEmptyBorder());
+		mainCadenButton.setBorderPainted(false);
 		//mainCadenButton.setBounds(50, 200, 250, 250);
 		mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
 		mainCadenButton.setContentAreaFilled(false);
-		mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		//mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
-
+		
 		upgradeButton = new JButton("Upgrade to next level");
 		upgradeButton.setLocation(300,200);
 		upgradeButton.setPreferredSize(new Dimension(250, 250));
@@ -112,9 +130,16 @@ public class ContentPanel extends JPanel {
 		cadensLabel.setSize(1604, 761);
 		cadensLabel.setLocation(10, 11);
 		
+		/*
+		 * Adding all the buttons & labels
+		 */
+
 		add(mainCadenButton);
+		add(pictureFrame);
 		add(upgradeButton);
 
+		//TEST-uuid : 352130d8-58e4-4c60-8a5f-ee22fcc47dd8
+		
 		add(cadensLabel);	
 	}
 	
@@ -141,5 +166,4 @@ public class ContentPanel extends JPanel {
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
 	
-
 }
