@@ -9,6 +9,7 @@ import objects.Game;
 public class CadenClickEvent implements ActionListener {
 
 	private Game game = Main.game;
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
 	{

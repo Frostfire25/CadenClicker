@@ -113,6 +113,7 @@ public class Game {
 	public void Upgrade()
 	{
 		Upgrades upgrade = new Upgrades(this.upgrade.GetLevel()+1);
+		
 		if((this.cadens - upgrade.GetCost()) >= 0)
 		{
 
@@ -126,6 +127,7 @@ public class Game {
 		else
 		{
 			System.out.println("Not enough cadens!");
+			Main.gui.contentPane.displaeyNotEnoughCadens();
 		}
 	}
 	

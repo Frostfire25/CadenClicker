@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 
 import javax.imageio.ImageIO;
@@ -31,6 +32,8 @@ import java.awt.event.ActionEvent;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
 
@@ -135,7 +138,7 @@ public class ContentPanel extends JPanel {
 		 */
 
 		add(mainCadenButton);
-		add(pictureFrame);
+		//add(pictureFrame);
 		add(upgradeButton);
 
 		//TEST-uuid : 352130d8-58e4-4c60-8a5f-ee22fcc47dd8
@@ -164,6 +167,26 @@ public class ContentPanel extends JPanel {
 	public void updateCount()
 	{
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+	}
+	
+	public void displaeyNotEnoughCadens() {
+		JLabel label = new JLabel("<html> <font color='red'>Not enough cadens.</font> </html>", JLabel.CENTER);
+		label.setLocation(new Point(900, 700));
+		label.setSize(new Dimension(500, 500));
+		add(label);
+		label.setVisible(true);
+
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				label.setVisible(false);
+				remove(label);
+				System.out.println("done");
+			}
+		}, 3000L);
+		
 	}
 	
 }
