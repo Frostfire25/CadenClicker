@@ -123,42 +123,42 @@ public class CadenClickerGUI extends JFrame {
 
 		contentPane.setLayout(null);
 		
-		mainCadenButton = new JButton(cadenIcon);
-		mainCadenButton.setBackground(Color.DARK_GRAY);
-		mainCadenButton.setSize(250, 250);
-		mainCadenButton.setLocation(10, 11);
+		//mainCadenButton = new JButton(cadenIcon);
+		//mainCadenButton.setBackground(Color.DARK_GRAY);
+		//mainCadenButton.setSize(250, 250);
+		//mainCadenButton.setLocation(10, 11);
 		//mainCadenButton.setBounds(50, 200, 250, 250);
 		//mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
-		mainCadenButton.setContentAreaFilled(false);
-		mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		mainCadenButton.addActionListener(new CadenClickEvent());
-		mainCadenButton.setIcon(cadenIcon);
+		//mainCadenButton.setContentAreaFilled(false);
+		//mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		//mainCadenButton.addActionListener(new CadenClickEvent());
+		//mainCadenButton.setIcon(cadenIcon);
 
-		upgradeButton = new JButton("UPGRADE");
-		upgradeButton.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
-		upgradeButton.setLocation(300,200);
-		upgradeButton.setPreferredSize(new Dimension(250, 250));
-		upgradeButton.setBounds(270, 141, 120, 95);
-		upgradeButton.addActionListener(new UpgradeClickEvent());
+		//upgradeButton = new JButton("UPGRADE");
+		//upgradeButton.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		//upgradeButton.setLocation(300,200);
+		//upgradeButton.setPreferredSize(new Dimension(250, 250));
+		//upgradeButton.setBounds(270, 141, 120, 95);
+		//upgradeButton.addActionListener(new UpgradeClickEvent());
 		
-		cadensLabel = new JLabel(String.valueOf(Main.game.getCadens()));
-		cadensLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		cadensLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
-		cadensLabel.setSize(55, 25);
-		cadensLabel.setLocation(107, 272);
+		//cadensLabel = new JLabel(String.valueOf(Main.game.getCadens()));
+		//cadensLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		//cadensLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
+		//cadensLabel.setSize(55, 25);
+		//cadensLabel.setLocation(107, 272);
 		
-		contentPane.add(mainCadenButton);
-		contentPane.add(upgradeButton);
+		//contentPane.add(mainCadenButton);
+		//contentPane.add(upgradeButton);
 
-		contentPane.add(cadensLabel);		
-		getContentPane().add(contentPane);
+		//contentPane.add(cadensLabel);		
+		//getContentPane().add(contentPane);
 		
-		JLabel upgradeCostLabel = new JLabel("Cost: " + (new Upgrades(Main.game.getUpgradeLevel()+1)).GetCost());
-		upgradeCostLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
-		upgradeCostLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		upgradeCostLabel.setBounds(270, 236, 120, 25);
-		contentPane.add(upgradeCostLabel);
-		contentPane.add(cadensLabel);	
+		//JLabel upgradeCostLabel = new JLabel("Cost: " + (new Upgrades(Main.game.getUpgradeLevel()+1)).GetCost());
+		//upgradeCostLabel.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 14));
+		//upgradeCostLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		//upgradeCostLabel.setBounds(270, 236, 120, 25);
+		//contentPane.add(upgradeCostLabel);
+		//contentPane.add(cadensLabel);	
 		setContentPane(new ContentPanel());
 	}
 	
@@ -166,14 +166,14 @@ public class CadenClickerGUI extends JFrame {
 	
 	public void changeButton()
 	{
-		mainCadenButton.setIcon(cadenIcon);
+		//mainCadenButton.setIcon(cadenIcon);
 	}
 	
 	public void updateCount()
 	{
-		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+		//cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 		//Initiates a new content panel
-		contentPane = new ContentPanel();
+		//contentPane = new ContentPanel();
 		
 		setContentPane(contentPane);
 	}
