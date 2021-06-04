@@ -13,5 +13,6 @@ public class UpgradeClickEvent implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) 
 	{	
 		game.Upgrade();
+		System.out.println(game.getCadens());
 	}
 }

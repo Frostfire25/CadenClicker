@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
+import javax.swing.SwingUtilities;
+
+import graphics.CadenClickerGUI;
 import graphics.Main;
 import upgrades.Upgrades;
 import workers.WorkerClass;
@@ -112,22 +115,30 @@ public class Game {
 	
 	public void Upgrade()
 	{
-		Upgrades upgrade = new Upgrades(this.upgrade.GetLevel()+1);
+		Upgrades temp = new Upgrades(this.upgrade.GetLevel()+1);
 		
-		if((this.cadens - upgrade.GetCost()) >= 0)
+		if((this.cadens - temp.GetCost()) >= 0)
 		{
 
 			this.upgrade.SetLevel(this.upgrade.GetLevel()+1);
-			this.cpc = upgrade.GetCPC();
-			this.cadens -= upgrade.GetCost();
-			//Main.gui.iconscadens(upgrade.getFileName(),250,250);
-			//Main.gui.changeButton();
-
+			this.cpc = temp.GetCPC();
+			this.cadens -= temp.GetCost();
+			
+			System.out.println(" " + this.upgrade.GetLevel() + " " + this.upgrade.getFileName());
+			
+			/*
+			 * Changes the button image 
+			 */
+			
+	
+			Main.gui.contentPanel.mainCadenButton.setIcon(CadenClickerGUI.iconscadens(this.upgrade.getFileName(),250,250));
+			//Main.gui.contentPanel.changeButton();
+			
 		}
 		else
 		{
 			System.out.println("Not enough cadens!");
-			Main.gui.contentPane.displaeyNotEnoughCadens();
+			Main.gui.contentPanel.displayNotEnoughCadens();
 		}
 	}
 	

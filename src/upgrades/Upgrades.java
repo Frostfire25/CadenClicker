@@ -53,30 +53,35 @@ public class Upgrades {
 				filename = "Cadenfixed.png";
 				cost = 0;
 			} break;
+			
 			case 2: {
 				cpc = 10;
 				name = "CoolCaden";
 				filename = "CoolCadenfixed.png";
 				cost = 1000;
 			} break;
+			
 			case 3: {
 				cpc = 100;
 				name = "TravisCaden";
 				filename = "TravisCadenfixed.png";
 				cost = 25000;
 			} break;
+			
 			case 4: {
 				cpc = 1000;
 				name = "HoodCaden";
 				filename = "HoodCadenfixed.png";
 				cost = 1000000;
 			} break;
+			
 			case 5: {
 				cpc = 10000;
 				name = "HoodMonaLisa";
 				filename = "HoodMonaLisafixed.png";
 				cost = 10000000;
 			} break;
+			
 		}
 	}
 	

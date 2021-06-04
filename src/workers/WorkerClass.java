@@ -1,13 +1,18 @@
 package workers;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.*;
 import java.io.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class WorkerClass {
+import graphics.Main;
+import objects.Game;
+
+public class WorkerClass implements ActionListener {
 	private int cps;
 
 	private String name;
@@ -18,12 +23,34 @@ public class WorkerClass {
 	public int amount;
 	public int price;
 
+	//352130d8-58e4-4c60-8a5f-ee22fcc47dd8
+	
 	public WorkerClass()
 	{
 		
 		cps = -1;
 		name = "None";
 
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		System.out.println(e.getSource());
+		
+		if(Main.game.getCadens() >= this.price) {
+			//Can purchase 1
+			amount++;
+			Main.game.removeCadens(price);
+			Main.gui.contentPanel.displayText("You have purchased one Chris Worker.", "green");
+			
+		} else {
+			//Can not purchase 1
+			System.out.println("here " + price);
+			Main.gui.contentPanel.displayNotEnoughCadens();
+		}
+		
 	}
 	
 	public WorkerClass(int level)
@@ -101,4 +128,5 @@ public class WorkerClass {
 	public int getPrice() {
 		return price;
 	}
+
 }
