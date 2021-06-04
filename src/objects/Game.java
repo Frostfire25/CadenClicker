@@ -55,9 +55,6 @@ public class Game {
 	public Game(UUID uuid, 
 			int cadens, int worker1Amount, int worker2Amount, int worker3Amount, int worker4Amount, int worker5Amount,
 			int upgradeLevel
-	
-			
-			
 			) {
 		
 		//Data storage

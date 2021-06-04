@@ -48,15 +48,17 @@ public class ContentPanel extends JPanel {
 	private JButton upgradeButton;
 	private JLabel cadensLabel;
 	private JLabel pictureFrame;
+	private JButton saveButton;
 	
 	private ImageIcon cadenIcon;
 	private ImageIcon pictureFrameIcon;
+	private ImageIcon saveGameIcon;
 	
 	
 	public ContentPanel() {
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
-    setLayout(null);
+		setLayout(null);		
 
 		
 		JButton button_4 = new JButton("Chris");
@@ -83,12 +85,11 @@ public class ContentPanel extends JPanel {
 		button_8.setBounds(1005, 632, 150, 79);
 		button_8.addActionListener(Main.game.lostdollaworker);
 		add(button_8);
-
-		setLayout(null);
 	
 		/*
 		 * Buttons
 		 */
+		
 		
 		pictureFrameIcon = CadenClickerGUI.utilImage("pictureframefixed.png", 300, 300);
 		pictureFrame = new JLabel(pictureFrameIcon);
@@ -104,10 +105,8 @@ public class ContentPanel extends JPanel {
 		mainCadenButton.setLocation(10, 50);
 		mainCadenButton.setBorder(BorderFactory.createEmptyBorder());
 		mainCadenButton.setBorderPainted(false);
-		//mainCadenButton.setBounds(50, 200, 250, 250);
 		mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
 		mainCadenButton.setContentAreaFilled(false);
-		//mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		mainCadenButton.addActionListener(new CadenClickEvent());
 		mainCadenButton.setIcon(cadenIcon);
 		
@@ -123,16 +122,28 @@ public class ContentPanel extends JPanel {
 		cadensLabel.setSize(250, 43);
 		cadensLabel.setLocation(10, 272);
 		
+		saveGameIcon = CadenClickerGUI.utilImage("savegamebutton.png", 75, 75);
+		saveButton = new JButton(saveGameIcon);
+		saveButton.setBackground(Color.DARK_GRAY);
+		saveButton.setSize(100, 100);
+		saveButton.setLocation(10, 650);
+		saveButton.setBorder(BorderFactory.createEmptyBorder());
+		saveButton.setBorderPainted(false);
+		saveButton.setPreferredSize(new Dimension(saveGameIcon.getIconHeight(), saveGameIcon.getIconWidth()));
+		saveButton.setContentAreaFilled(false);
+		saveButton.addActionListener(new CadenClickEvent());
+		saveButton.setIcon(saveGameIcon);
+		
 		/*
 		 * Adding all the buttons & labels
 		 */
 
 		add(mainCadenButton);
+		add(saveButton);
 		//add(pictureFrame);
 		add(upgradeButton);
 
 		//TEST-uuid : 352130d8-58e4-4c60-8a5f-ee22fcc47dd8
-		
 		add(cadensLabel);	
 	}
 	
