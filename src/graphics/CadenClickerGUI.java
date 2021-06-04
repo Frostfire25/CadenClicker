@@ -121,12 +121,13 @@ public class CadenClickerGUI extends JFrame {
 
 		contentPane.setLayout(null);
 		
-		mainCadenButton = new JButton(cadenIcon);
-		mainCadenButton.setBackground(Color.DARK_GRAY);
-		mainCadenButton.setSize(250, 250);
-		mainCadenButton.setLocation(10, 11);
+		//mainCadenButton = new JButton(cadenIcon);
+		//mainCadenButton.setBackground(Color.DARK_GRAY);
+		//mainCadenButton.setSize(250, 250);
+		//mainCadenButton.setLocation(10, 11);
 		//mainCadenButton.setBounds(50, 200, 250, 250);
 		//mainCadenButton.setPreferredSize(new Dimension(cadenIcon.getIconHeight(), cadenIcon.getIconWidth()));
+
 		mainCadenButton.setContentAreaFilled(false);
 		mainCadenButton.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		mainCadenButton.addActionListener(new CadenClickEvent());
@@ -163,17 +164,25 @@ public class CadenClickerGUI extends JFrame {
 	
 	//352130d8-58e4-4c60-8a5f-ee22fcc47dd8
 	
+
 	/*
 	public void changeButton()
 	{
 		mainCadenButton.setIcon(cadenIcon);
+    
+public void changeButton()
+	{
+		//mainCadenButton.setIcon(cadenIcon);
+
 	}
 	
 	public void updateCount()
 	{
+
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
+
 		//Initiates a new content panel
-		contentPane = new ContentPanel();
+		//contentPane = new ContentPanel();
 		
 		setContentPane(contentPane);
 	}

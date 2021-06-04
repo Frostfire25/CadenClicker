@@ -56,6 +56,8 @@ public class ContentPanel extends JPanel {
 	public ContentPanel() {
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
+    setLayout(null);
+
 		
 		JButton button_4 = new JButton("Chris");
 		button_4.setBounds(1005, 28, 150, 79);
@@ -159,6 +161,7 @@ public class ContentPanel extends JPanel {
 	{
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
+
 	
 	public void displayNotEnoughCadens() {
 		displayText("Not enough cadens.", "red");
