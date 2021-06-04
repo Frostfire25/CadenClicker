@@ -1,5 +1,5 @@
-cadens:0
-worker1amount:1
+cadens:100
+worker1amount:3
 worker2amount:0
 worker3amount:0
 worker4amount:0

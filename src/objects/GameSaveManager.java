@@ -1,5 +1,7 @@
 package objects;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,10 +10,18 @@ import java.util.UUID;
 
 import org.omg.CORBA.portable.ValueInputStream;
 
-public class GameSaveManager {
+import graphics.Main;
+
+public class GameSaveManager implements ActionListener {
 
 	public GameSaveManager() {
 		
+	}
+	
+	//Called when the game is saved
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		saveGame(Main.game);		
 	}
 	
 	/*
@@ -79,7 +89,9 @@ public class GameSaveManager {
 	//TO-Do
 	public void saveGame(Game game) {
 		try {
-		File file = new File("resources/games/"+game.getUUID().toString()+".txt");
+			System.out.println(game.getUUID().toString());
+			
+			File file = new File("resources/games/"+game.getUUID().toString()+".txt");
 		
 			if(!file.exists()) {
 				file.createNewFile();
@@ -103,4 +115,5 @@ public class GameSaveManager {
 			e.printStackTrace();
 		}
 	}
+	
 }

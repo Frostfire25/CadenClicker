@@ -29,10 +29,18 @@ public class Main {
 	public static void main(String[] args) {
 		
 		config = new Config();
-		gameSaveManager = new GameSaveManager();
 		
-		loadSaveGame();
+		/*
+		 * Disabled GSM through scanner
+		 * Adding inside UI.
+		 */
+		
+		//gameSaveManager = new GameSaveManager();
+		
+		//loadSaveGame();
 				
+		game = new Game();
+		
 		gui = new CadenClickerGUI();
 				
 		timer = new Timer();
