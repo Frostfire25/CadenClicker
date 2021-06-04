@@ -1,6 +1,7 @@
 package graphics;
 
 import java.awt.EventQueue;
+
 import java.util.Scanner;
 
 import java.util.UUID;
@@ -23,7 +24,7 @@ public class Main {
 	public static GameSaveManager gameSaveManager;
 	
 	public static Config config;
-	
+		
 	//Main Method
 	public static void main(String[] args) {
 		
@@ -31,7 +32,7 @@ public class Main {
 		gameSaveManager = new GameSaveManager();
 		
 		loadSaveGame();
-		
+				
 		gui = new CadenClickerGUI();
 				
 		timer = new Timer();

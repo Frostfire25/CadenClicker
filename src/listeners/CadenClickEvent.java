@@ -9,11 +9,12 @@ import objects.Game;
 public class CadenClickEvent implements ActionListener {
 
 	private Game game = Main.game;
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
 	{
 		game.addCadens(Main.game.cpc);
 		System.out.println(game.getCadens());
-		Main.gui.contentPane.updateCount();
+		Main.gui.contentPanel.updateCount();
 	}
 }

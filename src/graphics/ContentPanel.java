@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 
 import javax.imageio.ImageIO;
@@ -18,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
+import objects.Game;
+import workers.Worker;
 
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -31,6 +34,8 @@ import java.awt.event.ActionEvent;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
@@ -39,7 +44,7 @@ import java.awt.Font;
 public class ContentPanel extends JPanel {
 	
 	private JPanel clickerPanel;
-	private JButton mainCadenButton;
+	public JButton mainCadenButton;
 	private JButton upgradeButton;
 	private JLabel cadensLabel;
 	private JLabel pictureFrame;
@@ -51,27 +56,32 @@ public class ContentPanel extends JPanel {
 	public ContentPanel() {
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		//setContentPane(contentPane);
-		setLayout(null);
-		setLayout(null);
+    setLayout(null);
+
 		
 		JButton button_4 = new JButton("Chris");
 		button_4.setBounds(1005, 28, 150, 79);
+		button_4.addActionListener(Main.game.chrisworker);
 		add(button_4);
 		
 		JButton button_5 = new JButton("Hunter");
 		button_5.setBounds(1005, 179, 150, 79);
+		button_5.addActionListener(Main.game.hunterworker);
 		add(button_5);
 		
 		JButton button_6 = new JButton("SirEvrim");
 		button_6.setBounds(1005, 330, 150, 79);
+		button_6.addActionListener(Main.game.sirevrimworker);
 		add(button_6);
 		
 		JButton button_7 = new JButton("Tanner");
 		button_7.setBounds(1005, 481, 150, 79);
+		button_7.addActionListener(Main.game.tannerworker);
 		add(button_7);
 		
 		JButton button_8 = new JButton("LostDolla");
 		button_8.setBounds(1005, 632, 150, 79);
+		button_8.addActionListener(Main.game.lostdollaworker);
 		add(button_8);
 
 		setLayout(null);
@@ -87,7 +97,7 @@ public class ContentPanel extends JPanel {
 		pictureFrame.setLocation(10, 20);
 		pictureFrame.setIcon(pictureFrameIcon);
 		
-		cadenIcon = CadenClickerGUI.iconscadens("cadenfixed.png", 250,250);
+		cadenIcon = CadenClickerGUI.iconscadens(Main.game.GetUpgrade().getFileName(), 250,250);
 		mainCadenButton = new JButton(cadenIcon);
 		mainCadenButton.setBackground(Color.DARK_GRAY);
 		mainCadenButton.setSize(250, 250);
@@ -118,7 +128,7 @@ public class ContentPanel extends JPanel {
 		 */
 
 		add(mainCadenButton);
-		add(pictureFrame);
+		//add(pictureFrame);
 		add(upgradeButton);
 
 		//TEST-uuid : 352130d8-58e4-4c60-8a5f-ee22fcc47dd8
@@ -139,13 +149,49 @@ public class ContentPanel extends JPanel {
 		g.drawImage(CadenClickerGUI.utilImage("forest3.jpg", 1200, 800).getImage(), 0, 0, null);
 	}
 	
+	/*
 	public void changeButton()
 	{
 		mainCadenButton.setIcon(cadenIcon);
+		update();
 	}
+	*/
 	
 	public void updateCount()
 	{
 		cadensLabel.setText(String.valueOf(Main.game.getCadens()) + " Cadens");
 	}
+
+	
+	public void displayNotEnoughCadens() {
+		displayText("Not enough cadens.", "red");
+	}
+	
+	public void displayText(String text, String color) {
+		JLabel label = new JLabel("<html> <font color='"+color+"'>"+text+"</font> </html>", JLabel.CENTER);
+		label.setBounds(500,700,200, 50);
+		label.setFont(new Font("SansSerif", Font.PLAIN, 21));
+		label.setBackground(Color.BLACK);
+		
+		add(label);
+		update();
+	
+		
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				label.setVisible(false);
+				remove(label);
+			}
+			
+		}, 3000L);
+	}
+	
+	public void update() {
+		revalidate();
+		repaint();
+	}
+
 }

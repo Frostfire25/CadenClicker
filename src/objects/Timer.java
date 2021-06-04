@@ -23,7 +23,7 @@ public class Timer {
 			
 			@Override
 			public void run() {
-				Main.gui.contentPane.updateCount();			
+				Main.gui.contentPanel.updateCount();			
 			}
 		
 		}, 2000L, 100L);
