@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import listeners.CadenClickEvent;
 import listeners.UpgradeClickEvent;
 import objects.Game;
+import objects.GameSaveManager;
 import workers.Worker;
 
 import javax.swing.JLabel;
@@ -61,27 +62,27 @@ public class ContentPanel extends JPanel {
 		setLayout(null);		
 
 		
-		JButton button_4 = new JButton("Chris");
+		JButton button_4 = new JButton("Chris - 100");
 		button_4.setBounds(1005, 28, 150, 79);
 		button_4.addActionListener(Main.game.chrisworker);
 		add(button_4);
 		
-		JButton button_5 = new JButton("Hunter");
+		JButton button_5 = new JButton("Hunter - 1500");
 		button_5.setBounds(1005, 179, 150, 79);
 		button_5.addActionListener(Main.game.hunterworker);
 		add(button_5);
 		
-		JButton button_6 = new JButton("SirEvrim");
+		JButton button_6 = new JButton("SirEvrim - 30,000");
 		button_6.setBounds(1005, 330, 150, 79);
 		button_6.addActionListener(Main.game.sirevrimworker);
 		add(button_6);
 		
-		JButton button_7 = new JButton("Tanner");
+		JButton button_7 = new JButton("Tanner - 120,000");
 		button_7.setBounds(1005, 481, 150, 79);
 		button_7.addActionListener(Main.game.tannerworker);
 		add(button_7);
 		
-		JButton button_8 = new JButton("LostDolla");
+		JButton button_8 = new JButton("LostDolla - 2,500,000");
 		button_8.setBounds(1005, 632, 150, 79);
 		button_8.addActionListener(Main.game.lostdollaworker);
 		add(button_8);
@@ -131,7 +132,7 @@ public class ContentPanel extends JPanel {
 		saveButton.setBorderPainted(false);
 		saveButton.setPreferredSize(new Dimension(saveGameIcon.getIconHeight(), saveGameIcon.getIconWidth()));
 		saveButton.setContentAreaFilled(false);
-		saveButton.addActionListener(new CadenClickEvent());
+		saveButton.addActionListener(new GameSaveManager());
 		saveButton.setIcon(saveGameIcon);
 		
 		/*

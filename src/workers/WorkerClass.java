@@ -1,6 +1,7 @@
 package workers;
 
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.*;
@@ -17,8 +18,8 @@ public class WorkerClass implements ActionListener {
 
 	private String name;
 	private String filename;
-	private int xscale=25;
-	private int yscale=25;
+	private int xscale=50;
+	private int yscale=50;
 	private ImageIcon icon;
 	public int amount;
 	public int price;
@@ -45,6 +46,17 @@ public class WorkerClass implements ActionListener {
 			Main.game.removeCadens(price);
 			Main.gui.contentPanel.displayText("You have purchased one Chris Worker.", "green");
 			
+			// Add in the worker to the GUI
+			Point point = getRandomPoint(Main.gui.contentPanel);
+			JLabel label = new JLabel("Worker");
+			label.setIcon(icon);
+			label.setBounds((int)point.getX(), (int)point.getY(), xscale, yscale);
+			label.setText("Worker here!");
+			Main.gui.contentPanel.add(label);
+			Main.gui.contentPanel.update();
+
+			System.out.println(point);
+			System.out.println("added the picture to the page");
 		} else {
 			//Can not purchase 1
 			System.out.println("here " + price);
@@ -52,6 +64,14 @@ public class WorkerClass implements ActionListener {
 		}
 		
 	}
+
+	public static Point getRandomPoint(JPanel panel) {
+        int width = panel.getWidth();
+        int height = panel.getHeight();
+        int x = (int) (Math.random() * width);
+        int y = (int) (Math.random() * height);
+        return new Point(x, y);
+    }
 	
 	public WorkerClass(int level)
 	{
@@ -107,9 +127,8 @@ public class WorkerClass implements ActionListener {
 		//Wating for images
 		
 		
-		//Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
-		
-		//icon = new ImageIcon(scaled); 
+		Image scaled = img.getScaledInstance(xscale, yscale, Image.SCALE_SMOOTH);
+		icon = new ImageIcon(scaled); 
 	}
 	
 	public int getAmount() {

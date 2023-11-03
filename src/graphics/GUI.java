@@ -66,7 +66,7 @@ public class GUI extends JFrame {
 		Image scaled = img.getScaledInstance(xscale,yscale,Image.SCALE_SMOOTH);
 		cadenIcon = new ImageIcon(scaled);
 	}
-	
+	 
 	private void clickerPanel() {
 		clickerPanel = new JPanel(new BorderLayout());
 		clickerPanel.setBounds(0,0,1000,1000);    
@@ -99,7 +99,11 @@ public class GUI extends JFrame {
 		add(clickerPanel);
 
 	}
-	
+
+	public JPanel getClickerPanel() {
+		return clickerPanel;
+	}
+
 	public void openGUI() 
 	{
 		centeringWindow();

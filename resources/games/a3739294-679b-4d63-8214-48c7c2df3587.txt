@@ -1,0 +1,1 @@
+cadens:10worker1amount:1worker2amount:0worker3amount:0worker4amount:0worker5amount:0upgradelevel:1
